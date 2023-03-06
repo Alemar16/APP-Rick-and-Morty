@@ -7,11 +7,14 @@ export default function SearchBar(props) {
     const { value } = e.target;
     setId(value)
   }
-
+  const handleAddCharacter = () => { //para borrar ID ingresado al momento de dar click en Agregar
+    props.onSearch(id);
+    setId("");
+  };
   return (
     <div className={style.container}>
-      <input type="search" name="search" id="" onChange={handleChange} />
-      <button onClick={() => props.onSearch(id)}>Agregar</button>
+      <input type="search" name="search" id="" onChange={handleChange} value={id} />
+      <button onClick={handleAddCharacter}>Agregar</button>
     </div>
   );
 }
