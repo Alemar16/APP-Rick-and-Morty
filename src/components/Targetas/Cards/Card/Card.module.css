@@ -1,0 +1,93 @@
+@font-face {
+  font-family: RampartOne-Regular;
+  src: url(/src/assets/Font/Rampart_One/RampartOne-Regular.ttf);
+}
+@media only screen and (max-width: 600px) {
+  .mainItems {
+    grid-template-columns: auto;
+  }
+}
+
+.card {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(10px);/* soportado en safari y firefox */
+  font-family: RampartOne-Regular;
+  width: 25em;
+  height: 28em;
+  border-radius: 0 20px 20px 20px;
+  overflow: hidden;
+  margin: 2em;
+  position: relative;
+  box-shadow: 20 0 10px rgba(86, 82, 82, 0.8);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card::after {
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+}
+
+.card img {
+  border-radius: 15px;
+  top: 50%;
+  transform: translateY(-55%);
+  z-index: 10000;
+  width: 80%;
+  transition: 0.5s;
+  margin-bottom: 10px;
+}
+
+.card:hover img {
+  top: 0%;
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.card h2 {
+  color: rgb(34, 53, 125);
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.412);
+}
+.speciesYGenero {
+  color: rgb(240, 15, 15);
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.412);
+}
+
+.card button {
+  display: flex;
+  padding: 0.3rem 0.6rem;
+  background-color: #af564c;
+  color: #fff;
+  font-size: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 0 0 4px 0;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #e41c0e;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  cursor: pointer;
+}
