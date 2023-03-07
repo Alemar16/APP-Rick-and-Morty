@@ -1,6 +1,49 @@
-.container {
+/* .container {
    display: flex;
     flex-direction: row;
     justify-content: space-between;
   
+} */
+.container {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  
+  max-width: 800px; /* Establece el ancho máximo del contenedor */
+  
+  margin:0;
+ scroll-snap-type: mandatory;
+ height: 75vh;
+ overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.2);
+}
+.card {
+  width: calc(33.33% - 20px); /* Establece el ancho fijo de cada card restando el margen que se agregará */
+  margin-right: 10px; /* Añade un margen derecho para separar las cards */
+  margin-bottom: 10px; /* Añade un margen inferior para separar las cards */
+}
+
+.card:nth-child(3n) {
+  margin-right: 0; /* Quita el margen derecho de la tercera card de cada línea */
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: calc(50% - 20px); /* Redimensiona el ancho de cada card en pantallas más pequeñas */
+  }
+  
+  .card:nth-child(2n) {
+    margin-right: 0; /* Quita el margen derecho de la segunda card de cada línea en pantallas más pequeñas */
+  }
 }

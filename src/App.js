@@ -2,14 +2,16 @@ import "./App.css";
 import Cards from "./components/Targetas/Cards/Cards";
 import { useState } from "react"; //destructuring
 import Nav from "./components/Nav/Nav";
+import Titulo from "./components/Titulo/Titulo";
+
 
 function App() {
-    const example = {
+/*     const example = {
       name: "Rick Sanchez",
       species: "Human",
       gender: "Male",
       image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-  }; 
+  }; */ 
 
   const [characters, setCharacters] = useState([]);
 
@@ -27,7 +29,9 @@ function App() {
 
   return (
     <div className="App" style={{ padding: "25px" }}>
+      
       <Nav onSearch={onSearch} />
+      <Titulo />
       <Cards characters={characters} />
     </div>
   );
