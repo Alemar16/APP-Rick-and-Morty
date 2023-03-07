@@ -1,6 +1,14 @@
-.titulo {
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('../../assets/Font/get_schwifty.ttf') format('truetype');
+}
 
-  text-align: center;
+.titulo {
+ font-family: 'Get Schwifty', cursive;
+ font-size: 4rem;
+ color: #44da70;
+ margin-left: 30px;
+  text-align: left;
   animation-name: tituloAnimacion;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
