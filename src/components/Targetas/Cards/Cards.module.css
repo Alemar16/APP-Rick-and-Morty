@@ -10,10 +10,11 @@
   justify-content: flex-start; 
   max-width: 745px; /* Establece el ancho máximo del contenedor */
   margin:0;
-  margin-top: 7rem;
+  margin-top: 5rem;
  scroll-snap-type:proximity;
  height: 50vh;
  overflow: auto;
+
 }
 
 .container::-webkit-scrollbar {
