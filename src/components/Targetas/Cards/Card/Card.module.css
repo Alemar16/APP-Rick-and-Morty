@@ -1,36 +1,102 @@
+@font-face {
+  font-family: RampartOne-Regular;
+  src: url(/src/assets/Font/Rampart_One/RampartOne-Regular.ttf);
+}
+@media only screen and (max-width: 600px) {
+  .mainItems {
+    grid-template-columns: auto;
+  }
+}
+
 .card {
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);/* soportado en safari y firefox */
   font-family: RampartOne-Regular;
-  width: 13.5em; /* Establece el ancho de la card */
-  height: 28em;
-  border-radius: 0 20px 20px 20px;
+  width: 13em;
+  height: 16em;
+  border-radius: 15px;
   overflow: hidden;
   margin: 1em;
+
   position: relative;
-  box-shadow: 20 0 10px rgba(86, 82, 82, 0.8);
+  box-shadow: 0 0 2.5px rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card::after {
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
 }
 
 .card img {
   border-radius: 15px;
-  top: 50%;
-  transform: translateY(-55%);
+  top: 20%;
+  transform: translateY(-50%);
   z-index: 10000;
-  width: 80%;
-  transition: 0.5s;
-  margin-bottom: 10px;
+  width: 100%;
+  transition: 0.4s;
+  margin-bottom: 50px;
+  transform-style: preserve-3d;
 }
 
-.card h2 {
-  color: rgb(34, 53, 125);
-  font-size: 1rem; /* Establece el tamaño de la fuente */
+.card:hover img {
+  transform: rotateY(180deg);
+}
+
+.name {
+  color: rgb(20, 197, 20);
+  font-size: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.412);
 }
-
 .speciesYGenero {
-  color: rgb(240, 15, 15);
-  font-size: 1rem; /* Establece el tamaño de la fuente */
+  justify-content:baseline;
+  color: white;
+  font-size: 0.9rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.412);
+}
+
+.cardButton {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  background-color: transparent;
+  color: #fff;
+  
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.cardButton:hover {
+  background-color: #ff4d4d;
+  transform: scale(1.1);
+}
+
+.cardButton:focus {
+  outline: none;
+}
+
+
+
+.cardButton:hover:before {
+  color: #ff4d4d;
+}
+
+.cardButton:focus:before {
+  color: #ff4d4d;
 }

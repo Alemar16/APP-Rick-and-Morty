@@ -5,16 +5,14 @@
   
 } */
 .container {
-  background-color: black;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  
-  max-width: 800px; /* Establece el ancho máximo del contenedor */
-  
+  justify-content: flex-start; 
+  max-width: 745px; /* Establece el ancho máximo del contenedor */
   margin:0;
- scroll-snap-type: mandatory;
- height: 60vh;
+  margin-top: 7rem;
+ scroll-snap-type:proximity;
+ height: 50vh;
  overflow: auto;
 }
 
