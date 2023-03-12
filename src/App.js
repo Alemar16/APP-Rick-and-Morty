@@ -16,6 +16,12 @@ function App() {
   const [characters, setCharacters] = useState([]);
 
   function onSearch(character) {
+    const characterId = parseInt(character);
+    if (characters.some((char) => char.id === characterId)) {
+      window.alert(`El personaje con ID ${characterId} ya está mostrado.`);
+      return;
+    }
+
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
       .then((data) => {
