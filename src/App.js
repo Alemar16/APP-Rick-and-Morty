@@ -3,6 +3,7 @@ import Cards from "./components/Targetas/Cards/Cards";
 import { useState } from "react"; //destructuring
 import Nav from "./components/Nav/Nav";
 import Titulo from "./components/Titulo/Titulo";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 
 
 function App() {
@@ -14,15 +15,16 @@ function App() {
   }; */ 
 
   const [characters, setCharacters] = useState([]);
+  const [error, setError] = useState(null);
 
   function onSearch(character) {
     const characterId = parseInt(character);
     if (isNaN(characterId)) {
-    window.alert("Por favor ingresa un valor numérico.");
+    setError("Por favor ingresa un valor numérico.");
     return;
   }
     if (characters.some((char) => char.id === characterId)) {
-      window.alert(`El personaje con ID ${characterId} ya está mostrado.`);
+      setError(`El personaje con ID ${characterId} ya está mostrado.`);
       return;
     }
 
@@ -31,19 +33,24 @@ function App() {
       .then((data) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert(`No existe un personaje con el ID ${characterId}`);
+          setError(null)
+        }else {
+          setError(`No existe un personaje con el ID ${characterId}`);
         }
       });
-  }
-     function handleCloseCard(id) {
-       setCharacters((oldChars) => oldChars.filter((char) => char.id !== id));
-     }
+      }
+    function handleCloseCard(id) {
+      setCharacters((oldChars) => oldChars.filter((char) => char.id !== id));
+    }
+
+
+  
   return (
     <div className="App" style={{ padding: "10px" }}>
       
       <Nav onSearch={onSearch} />
       <Titulo />
+      {error && <ErrorMessage message={error}/>}
       <Cards characters={characters} onCloseCard={handleCloseCard} />
     </div>
   );
