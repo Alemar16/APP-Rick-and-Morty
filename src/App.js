@@ -17,6 +17,10 @@ function App() {
 
   function onSearch(character) {
     const characterId = parseInt(character);
+    if (isNaN(characterId)) {
+    window.alert("Por favor ingresa un valor numérico.");
+    return;
+  }
     if (characters.some((char) => char.id === characterId)) {
       window.alert(`El personaje con ID ${characterId} ya está mostrado.`);
       return;
