@@ -14,13 +14,13 @@ export default function Nav(props) {
             <a href="#">Inicio</a>
           </li>
           <li>
-            <a href="#">Servicios</a>
+            <a href="#">Tarjetas</a>
           </li>
           <li>
             <a href="#">Acerca de</a>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <a href="#">Favoritos</a>
           </li>
         </ul>
       </div>

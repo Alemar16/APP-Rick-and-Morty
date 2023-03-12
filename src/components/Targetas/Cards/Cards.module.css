@@ -11,11 +11,11 @@
   max-width: 745px; /* Establece el ancho máximo del contenedor */
   margin:0;
   margin-top: 5rem;
- scroll-snap-type:proximity;
+ scroll-snap-type: smooth;
  height: 50vh;
- overflow: auto;
-border: solid 2px;
+ overflow-y: scroll;
 }
+
 
 .container::-webkit-scrollbar {
   width: 10px;

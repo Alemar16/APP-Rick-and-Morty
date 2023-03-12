@@ -2,17 +2,12 @@
   font-family: RampartOne-Regular;
   src: url(/src/assets/Font/Rampart_One/RampartOne-Regular.ttf);
 }
-@media only screen and (max-width: 600px) {
-  .mainItems {
-    grid-template-columns: auto;
-  }
-}
 
 .card {
   background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(7, 7, 7, 0.5);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(10px);/* soportado en safari y firefox */
+  -webkit-backdrop-filter: blur(10px); /* soportado en safari y firefox */
   font-family: RampartOne-Regular;
   width: 13em;
   height: 16em;
@@ -21,7 +16,7 @@
   margin: 1em;
 
   position: relative;
-  box-shadow: 0 0 2.5px rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+ box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
 }
 
 .card::before {
@@ -59,8 +54,9 @@
   font-size: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.412);
 }
+
 .speciesYGenero {
-  justify-content:baseline;
+  justify-content: baseline;
   color: white;
   font-size: 0.9rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.412);
