@@ -28,7 +28,7 @@ function App() {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
         } else {
-          window.alert("No hay personajes con ese ID");
+          window.alert(`No existe un personaje con el ID ${characterId}`);
         }
       });
   }
