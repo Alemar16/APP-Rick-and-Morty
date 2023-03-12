@@ -26,13 +26,15 @@ function App() {
         }
       });
   }
-
+     function handleCloseCard(id) {
+       setCharacters((oldChars) => oldChars.filter((char) => char.id !== id));
+     }
   return (
     <div className="App" style={{ padding: "10px" }}>
       
       <Nav onSearch={onSearch} />
       <Titulo />
-      <Cards characters={characters} />
+      <Cards characters={characters} onCloseCard={handleCloseCard} />
     </div>
   );
 }

@@ -11,11 +11,12 @@ export default function Cards(props) {
       {characters.map((char) => (
         <Card
           key={char.name}
+          id={char.id}
           name={char.name}
           species={char.species}
           gender={char.gender}
           image={char.image}
-          onClose={() => alert(char.name)}
+          onClose={() => props.onCloseCard(char.id)}
         />
       ))}
     </div>
