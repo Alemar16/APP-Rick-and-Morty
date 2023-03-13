@@ -1,11 +1,12 @@
 
 import React from 'react';
-
 import styles from './Card.module.css';
+import {Link} from "react-router-dom"
 
 export default function Card(props) {
   //   console.log(props);
   return (
+    <Link to={`/detail/${props.id}`}>
     <div className={styles.card}>
       
       <button className={styles.cardButton} onClick={props.onCloseCard}>X</button>
@@ -20,7 +21,8 @@ export default function Card(props) {
       </div>
 
       <img src={props.image} alt={props.name} />
-    </div>
+      </div>
+    </Link>
   );
 }
 
