@@ -4,6 +4,11 @@ import Nav from "./components/Nav/Nav";
 import Titulo from "./components/Titulo/Titulo";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Cards from "./components/Targetas/Cards/Cards";
+import {Routes, Route} from "react-router-dom"
+import Navbar from "./components/Nav/NavBar/NavBar";
+import About from "./components/About/About";
+import Detail from "./components/Detail/Detail";
+
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -36,14 +41,29 @@ function App() {
     setCharacters((oldChars) => oldChars.filter((char) => char.id !== id));
   }
 
-  return (
+return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <Titulo />
-      {error && <ErrorMessage message={error} />}
-      <Cards characters={characters} onCloseCard={handleCloseCard} />
+     {/*  <Navbar /> */}
+      <Routes>
+        <Route path="/home" element={
+          <>
+            <Titulo />
+            {error && <ErrorMessage message={error} />}
+            <Cards onClose={handleCloseCard} characters={characters} />
+          </>
+        } />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:detailId" element={<Detail />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
