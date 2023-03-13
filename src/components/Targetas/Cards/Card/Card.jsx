@@ -8,7 +8,7 @@ export default function Card(props) {
   return (
     <div className={styles.card}>
       
-      <button className={styles.cardButton} onClick={props.onClose}>X</button>
+      <button className={styles.cardButton} onClick={props.onCloseCard}>X</button>
       <h3>{props.id}</h3>
       <div className={styles.name}>
         <h2>{props.name}</h2>
@@ -23,5 +23,8 @@ export default function Card(props) {
     </div>
   );
 }
+
+
+
 
 

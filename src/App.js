@@ -50,7 +50,7 @@ return (
           <>
             <Titulo />
             {error && <ErrorMessage message={error} />}
-            <Cards onClose={handleCloseCard} characters={characters} />
+            <Cards onCloseCard={handleCloseCard} characters={characters} />
           </>
         } />
         <Route path="/about" element={<About />} />
