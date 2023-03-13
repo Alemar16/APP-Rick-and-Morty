@@ -1,39 +1,31 @@
 import React from "react";
+import Logo from "./Logo/Logo";
 import styles from "./Nav.module.css";
+import NavBar from "./NavBar/NavBar.jsx";
 import SearchBar from "./SearchBar/SearchBar";
+
 
 export default function Nav(props) {
   return (
     <div className={styles.container}>
+      
       <div className={styles.leftSection}>
-       {/*  <div className={styles.logo}>
-          <img src="/logo.png" alt="Logo" />
-        </div> */}
-        <ul>
-          <li>
-            <a href="#">Inicio</a>
-          </li>
-          <li>
-            <a href="#">Tarjetas</a>
-          </li>
-          <li>
-            <a href="#">Acerca de</a>
-          </li>
-          <li>
-            <a href="#">Favoritos</a>
-          </li>
-        </ul>
+        <Logo />
       </div>
+
+      <div className={styles.centerSection}>
+        <NavBar />
+      </div>
+
       <div className={styles.rightSection}>
         <div>
           <SearchBar onSearch={props.onSearch} />
         </div>
       </div>
+    
     </div>
   );
 }
 
-  /* <div>
-        <SearchBar onSearch={(characterID) => window.alert(characterID)} />
-      </div> */
+
 
