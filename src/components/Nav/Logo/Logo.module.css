@@ -1,0 +1,14 @@
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  margin-top: 20px;
+  margin-left: 0;
+
+  max-width: 100px;
+  max-height: 100Px;
+}
+
