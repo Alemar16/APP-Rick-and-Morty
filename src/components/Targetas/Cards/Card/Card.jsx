@@ -9,10 +9,8 @@ export default function Card(props) {
     <Link to={`/detail/${props.id}`}>
     <div className={styles.card}>
       
-        <button className={styles.cardButton} onClick={props.onCloseCard}>X</button>
-        <div className={styles.id}>
-          <h3>{props.id}</h3>
-        </div>
+      <button className={styles.cardButton} onClick={props.onCloseCard}>X</button>
+      <h3>{props.id}</h3>
       <div className={styles.name}>
         <h2>{props.name}</h2>
       </div>
