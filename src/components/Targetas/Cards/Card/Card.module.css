@@ -1,19 +1,16 @@
-@font-face {
-  font-family: RampartOne-Regular;
-  src: url(/src/assets/Font/Rampart_One/RampartOne-Regular.ttf);
-}
+
 
 .card {
-  background-color: transparent;
+  background-color: black;
   border: 2px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(10px); /* soportado en safari y firefox */
   font-family: RampartOne-Regular;
-  width: 13em;
+  width: 10em;
   height: 16em;
   border-radius: 15px 0 15px 15px;
   overflow: hidden;
-  margin: 1em;
+  margin: 0.5em;
 
   position: relative;
   box-shadow: 0 0 2.5px rgba(255, 255, 255, 0.5),
@@ -36,12 +33,17 @@
   font-size: 12em;
   font-weight: 800;
 }
-
+.id{
+  color: aliceblue;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
 .card img {
   border-radius: 15px;
   top: 20%;
   transform: translateY(-50%);
-  z-index: 10000;
+  z-index: 1000;
   width: 100%;
   transition: 0.1s;
   margin-bottom: 50px;
@@ -56,6 +58,8 @@
   color: rgb(20, 197, 20);
   font-size: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.412);
+  margin-top: 0;
+  padding-top: 10px;
 }
 
 .speciesYGenero {

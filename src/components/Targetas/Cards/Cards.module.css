@@ -9,10 +9,10 @@
   flex-wrap: wrap;
   justify-content: flex-start; 
   max-width: 745px; /* Establece el ancho máximo del contenedor */
-  margin:0;
-  margin-top: 5rem;
+  margin-left:50px;
+  margin-top: 60px;
  scroll-snap-type: smooth;
- height: 50vh;
+ height: 55vh;
  overflow-y: scroll;
 }
 
