@@ -10,6 +10,7 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 
 
+
 function App() {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState(null);
