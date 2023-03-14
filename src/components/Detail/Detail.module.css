@@ -1,17 +1,18 @@
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('../../assets/Font/get_schwifty.ttf') format('truetype');
+}
+
 .container {
-  display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  max-width: 80%;
-  max-height: 20%;
-  margin-top: 180px;
-  margin-right: 700px;
-  margin-left: 50px;
+  margin-top: 100px;
+  margin-right: 450px;
+  margin-left: 30px;
 }
 .container:hover {
   background: linear-gradient(to right, #0a0a0a 0%, #33333300 100%);
-   box-shadow: 0 0 10px rgba(234, 241, 241, 0.6);
+  box-shadow: 0 0 10px rgba(234, 241, 241, 0.6);
 }
 
 
@@ -44,4 +45,17 @@
   width: 50%;
   height: 100%;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.texto{
+  font-weight: bold;
+  font-family: Get Schwifty;
+  font-size: 1.5rem;
+  color: rgb(22, 202, 15);
+  text-shadow: 0 0 10px rgba(234, 241, 241, 0.6);
+}
+.text2{
+  color: red;
+  font-size: 2rem;
 }
