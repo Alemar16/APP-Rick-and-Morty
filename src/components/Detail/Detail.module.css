@@ -2,12 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
   max-width: 80%;
   max-height: 20%;
   margin-top: 180px;
   margin-right: 700px;
   margin-left: 50px;
 }
+.container:hover {
+  background: linear-gradient(to right, #0a0a0a 0%, #33333300 100%);
+   box-shadow: 0 0 10px rgba(234, 241, 241, 0.6);
+}
+
 
 .containerInfo {
   display: flex;

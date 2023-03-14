@@ -42,22 +42,24 @@ function App() {
   }
 
 return (
-    <div className="App">
-      <Nav onSearch={onSearch} />
-     {/*  <Navbar /> */}
-      <Routes>
-        <Route path="/home" element={
+  <div className="App">
+    <Nav onSearch={onSearch} />
+    <Routes>
+      <Route
+        path="/home"
+        element={
           <>
             <Titulo />
             {error && <ErrorMessage message={error} />}
             <Cards onCloseCard={handleCloseCard} characters={characters} />
           </>
-        } />
-        <Route path="/about" element={<About />} />
-        <Route path="/detail/:detailId" element={<Detail />} />
-      </Routes>
-    </div>
-  );
+        }
+      />
+      <Route path="/about" element={<About />} />
+      <Route path="/detail/:detailId" element={<Detail />} />
+    </Routes>
+  </div>
+);
 }
 
 export default App;
