@@ -5,6 +5,7 @@ body {
     sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  z-index: 100;
   background-image: url('./assets/imagenes/Fonfo\ de\ Rick.jpg ');
   background-size: cover;
   background-repeat: no-repeat;

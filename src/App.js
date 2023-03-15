@@ -45,13 +45,14 @@ function App() {
 return (
   <div className="App">
     <Nav onSearch={onSearch} />
+    {error && <ErrorMessage message={error} />}
     <Routes>
       <Route
         path="/home"
         element={
           <>
             <Titulo />
-            {error && <ErrorMessage message={error} />}
+            
             <Cards onCloseCard={handleCloseCard} characters={characters} />
           </>
         }
