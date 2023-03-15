@@ -1,18 +1,20 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Nav from "./components/Nav/Nav";
 import Titulo from "./components/Titulo/Titulo";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Cards from "./components/Targetas/Cards/Cards";
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, useLocation} from "react-router-dom"
 import Navbar from "./components/Nav/NavBar/NavBar";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Sinopsis from "./components/Sinopsis/Sinopsis";
+import Form from "./components/Form/Form";
 
 
 
 function App() {
+  const location = useLocation()
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState(null);
 
@@ -45,12 +47,15 @@ function App() {
 
 return (
   <div className="App">
-    <Nav onSearch={onSearch} />
+    {location.pathname !== "/" &&
+    <Nav onSearch={onSearch} />}
     {error && <ErrorMessage message={error} />}
     <Routes>
-      <Route path="/" element={<Sinopsis />}/>
+      <Route path="/" element={<Form />} />
+      <Route path="/sinopsis" element={<Sinopsis />} />
       <Route
-        path="/home" element={
+        path="/home"
+        element={
           <>
             <Titulo />
             <Cards onCloseCard={handleCloseCard} characters={characters} />

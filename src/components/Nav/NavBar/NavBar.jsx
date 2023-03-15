@@ -19,7 +19,7 @@ export default function Navbar() {
     <div className={styles.navbar}>
 
       <NavLinkMe to="/home">Inicio</NavLinkMe>
-      <NavLinkMe to="/">Sinopsis</NavLinkMe>
+      <NavLinkMe to="/sinopsis">Sinopsis</NavLinkMe>
       <NavLinkMe to="/about">Acerca de Mi</NavLinkMe>
     </div>
   );

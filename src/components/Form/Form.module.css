@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  background-color: bisque;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 50px;
+  margin-left: 200px;
+  max-width: 30%;
+  max-height: 20%;
+
+
+ 
+}
