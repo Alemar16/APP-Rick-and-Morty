@@ -8,6 +8,7 @@ import {Routes, Route} from "react-router-dom"
 import Navbar from "./components/Nav/NavBar/NavBar";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
+import Sinopsis from "./components/Sinopsis/Sinopsis";
 
 
 
@@ -47,12 +48,11 @@ return (
     <Nav onSearch={onSearch} />
     {error && <ErrorMessage message={error} />}
     <Routes>
+      <Route path="/" element={<Sinopsis />}/>
       <Route
-        path="/home"
-        element={
+        path="/home" element={
           <>
             <Titulo />
-            
             <Cards onCloseCard={handleCloseCard} characters={characters} />
           </>
         }
