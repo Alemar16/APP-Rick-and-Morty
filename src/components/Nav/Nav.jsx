@@ -6,9 +6,12 @@ import SearchBar from "./SearchBar/SearchBar";
 
 
 export default function Nav(props) {
+  //console.log(props) // {onSearch : fn()}
+  const handleLogOut = () => {
+    props.logOut();
+  };
   return (
     <div className={styles.container}>
-      
       <div className={styles.leftSection}>
         <Logo />
       </div>
@@ -22,7 +25,7 @@ export default function Nav(props) {
           <SearchBar onSearch={props.onSearch} />
         </div>
       </div>
-    
+      <button onClick={handleLogOut}>LogOut</button>
     </div>
   );
 }

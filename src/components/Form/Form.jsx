@@ -1,44 +1,42 @@
-import styles from "./Form.module.css"
-import { useState, useEffect } from "react"
-import{validate} from "./validation"
-
-
+import styles from "./Form.module.css";
+import { useEffect, useState } from "react";
+import { validate } from "./validation";
 export default function Form(props) {
-  
- 
   const [userData, setUserData] = useState({
     userName: "",
     password: "",
-  })
-    const [errors, setErrors] = useState({
-      userName: "",
-      password: "",
-    });
+  });
+  const [errors, setErrors] = useState({
+    userName: "",
+    password: "",
+  });
   const handleChange = (event) => {
-    const { name, value } = event.target
-    //username: abc123@gmail.com / password: ******
+    const { name, value } = event.target;
+    // userName : alemar.martinez16@gmail.com, password: "Ale123"
     setUserData({
-      ...userData,//compara una copia con el DOM virtual
-      [name]: value,
-    })
-    setErrors(validate({
       ...userData,
-      [name]:value
-    }))
-  }
-  useEffect(() => {
-    console.log(userData)
-  }, [userData])
+      [name]: value,
+    });
+    setErrors(
+      validate({
+        ...userData,
+        [name]: value,
+      })
+    );
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.login(userData);
+  };
+
   return (
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={handleSubmit}>
       <img
-        src="https://th.bing.com/th/id/OIP.h0oT4yTzyJfu12nJ-GOsYwHaIQ?pid=ImgDet&rs=1"
-        alt="Imagen de Rick and Morty"
-        width="200"
-        height="300"
+        src="https://i.guim.co.uk/img/media/b563ac5db4b4a4e1197c586bbca3edebca9173cd/0_12_3307_1985/master/3307.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=61a26bf43da26e4ca97e932e5ee113f7"
+        alt="Not found"
       />
       <br />
-      <label htmlFor="">Nombre:</label>
+      <label htmlFor="">Nombre: </label>
       <input
         type="text"
         value={userData.userName}
@@ -49,7 +47,7 @@ export default function Form(props) {
       {errors.userName ? (
         <p style={{ color: "red" }}>{errors.userName}</p>
       ) : null}
-      <label htmlFor="">Contraseña:</label>
+      <label htmlFor="">Password: </label>
       <input
         type="password"
         value={userData.password}
@@ -61,7 +59,7 @@ export default function Form(props) {
         <p style={{ color: "red" }}>{errors.password}</p>
       ) : null}
       <br />
-      <button>Login</button>
+      <button type="submit">Login</button>
     </form>
   );
 }

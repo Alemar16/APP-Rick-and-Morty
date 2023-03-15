@@ -4,7 +4,7 @@ import Nav from "./components/Nav/Nav";
 import Titulo from "./components/Titulo/Titulo";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import Cards from "./components/Targetas/Cards/Cards";
-import {Routes, Route, useLocation} from "react-router-dom"
+import {Routes, Route, useLocation, useNavigate} from "react-router-dom"
 import Navbar from "./components/Nav/NavBar/NavBar";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
@@ -14,9 +14,13 @@ import Form from "./components/Form/Form";
 
 
 function App() {
+  const navigate = useNavigate();
   const location = useLocation()
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState(null);
+  const [access, setAccess] = useState(false);
+  const userName = "alemar.martinez16@gmail.com";
+  const password = "Ale123";
 
   function onSearch(character) {
     const characterId = parseInt(character);
@@ -45,13 +49,31 @@ function App() {
     setCharacters((oldChars) => oldChars.filter((char) => char.id !== id));
   }
 
+    const login = (userData) => {
+      // {userName : "alemar.martinez16@gmail.com", password: "Ale123"}
+      if (userData.userName === userName && userData.password === password) {
+        setAccess(true);
+        navigate("/home");
+      } else {
+        alert("El usuario o la contraseña no son correctos.")
+      }
+
+  };
+    const logOut = () => {
+      access && setAccess(false);
+      navigate("/");
+    };
+
+    useEffect(() => {
+      !access && navigate("/");
+    }, [access, navigate]);
+
 return (
   <div className="App">
-    {location.pathname !== "/" &&
-    <Nav onSearch={onSearch} />}
+    {location.pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
     {error && <ErrorMessage message={error} />}
     <Routes>
-      <Route path="/" element={<Form />} />
+      <Route path="/" element={<Form login={login} />} />
       <Route path="/sinopsis" element={<Sinopsis />} />
       <Route
         path="/home"
