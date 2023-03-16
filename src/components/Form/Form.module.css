@@ -1,4 +1,4 @@
-.container{
+/* .container{
   display: flex;
   background-color: bisque;
   flex-direction: column;
@@ -13,4 +13,26 @@
 
 .warning{
   border-color: red;
+} */
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blanchedalmond;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 50px;
+  margin-left: 400px;
+  max-width: 30%;
+  max-height: 20%;
+  z-index: 1; 
+ 
+}
+
+.formBackground {
+/*   background-image: url('https://images6.alphacoders.com/114/1148416.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; */
 }
