@@ -10,6 +10,8 @@ import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Sinopsis from "./components/Sinopsis/Sinopsis";
 import Form from "./components/Form/Form";
+import Error404 from "./components/Error404/Error404";
+
 
 
 
@@ -72,8 +74,10 @@ return (
   <div className="App">
     {location.pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
     {error && <ErrorMessage message={error} />}
+    
     <Routes>
-      <Route path="/" element={<Form login={login} />} />
+      <Route path="*" element={<Error404 />} />
+      {/* <Route path="/" element={<Form login={login} />} />  */}
       <Route path="/sinopsis" element={<Sinopsis />} />
       <Route
         path="/home"
@@ -86,6 +90,7 @@ return (
       />
       <Route path="/about" element={<About />} />
       <Route path="/detail/:detailId" element={<Detail />} />
+      
     </Routes>
   </div>
 );
