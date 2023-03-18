@@ -66,18 +66,18 @@ function App() {
       navigate("/");
     };
 
-    useEffect(() => {
+    /* useEffect(() => {
       !access && navigate("/");
     }, [access, navigate]);
-
+ */
 return (
   <div className="App">
     {location.pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
     {error && <ErrorMessage message={error} />}
     
     <Routes>
-      <Route path="*" element={<Error404 />} />
-      {/* <Route path="/" element={<Form login={login} />} />  */}
+      
+      <Route path="/" element={<Form login={login} />} />
       <Route path="/sinopsis" element={<Sinopsis />} />
       <Route
         path="/home"
@@ -90,7 +90,8 @@ return (
       />
       <Route path="/about" element={<About />} />
       <Route path="/detail/:detailId" element={<Detail />} />
-      
+        
+      <Route path="*" element={<Error404 />} />
     </Routes>
   </div>
 );
