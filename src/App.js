@@ -22,7 +22,7 @@ function App() {
   const [error, setError] = useState(null);
   const [access, setAccess] = useState(false);
   const userName = "alemar.martinez16@gmail.com";
-  const password = "Ale123";
+  const password = "123";
 
   function onSearch(character) {
     const characterId = parseInt(character);

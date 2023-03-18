@@ -1,6 +1,11 @@
+
+
+
 import styles from "./Form.module.css";
 import { useEffect, useState } from "react";
 import { validate } from "./validation";
+import logo from "../../assets/imagenes/Logo/Rick_and_Morty_Logo-transformed.png";
+
 export default function Form(props) {
   const [userData, setUserData] = useState({
     userName: "",
@@ -10,9 +15,9 @@ export default function Form(props) {
     userName: "",
     password: "",
   });
+
   const handleChange = (event) => {
     const { name, value } = event.target;
-    // userName : alemar.martinez16@gmail.com, password: "Ale123"
     setUserData({
       ...userData,
       [name]: value,
@@ -24,49 +29,52 @@ export default function Form(props) {
       })
     );
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     props.login(userData);
   };
-  
 
   return (
-    <div>
-      <form
-        className={`${styles.container} ${styles.formBackground}`}
-        onSubmit={handleSubmit}>
-        
+    <div className={styles.Background}>
+      <div className={styles.loginBox}>
         <img
-          src="https://i.guim.co.uk/img/media/b563ac5db4b4a4e1197c586bbca3edebca9173cd/0_12_3307_1985/master/3307.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=61a26bf43da26e4ca97e932e5ee113f7"
-          alt="Not found"
+          src={logo}
+          className={styles.avatar}
+          alt="Avatar Image"
         />
-        <br />
-        <label htmlFor="">Nombre: </label>
-        <input
-          type="text"
-          value={userData.userName}
-          name="userName"
-          onChange={handleChange}
-          className={errors.userName && styles.warning}
-        />
-        {errors.userName ? (
-          <p style={{ color: "red" }}>{errors.userName}</p>
-        ) : null}
-        <label htmlFor="">Password: </label>
-        <input
-          type="password"
-          value={userData.password}
-          name="password"
-          onChange={handleChange}
-          className={errors.password && styles.warning}
-        />
-        {errors.password ? (
-          <p style={{ color: "red" }}>{errors.password}</p>
-        ) : null}
-        <br />
-          <button type="submit">Login</button>
-        
-      </form>
+        <h1>Inicia Seccion</h1>
+        <form className={styles.formContainer} onSubmit={handleSubmit}>
+          <label htmlFor="userName">Usuario</label>
+          <input
+            type="text"
+            placeholder="Ingresa Usuario"
+            value={userData.userName}
+            name="userName"
+            onChange={handleChange}
+            className={errors.userName && styles.warning}
+          />
+          {errors.userName ? (
+            <p style={{ color: "red" }}>{errors.userName}</p>
+          ) : null}
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={userData.password}
+            name="password"
+            onChange={handleChange}
+            className={errors.password && styles.warning}
+          />
+          {errors.password ? (
+            <p style={{ color: "red" }}>{errors.password}</p>
+          ) : null}
+          <input type="submit" value="Log In" />
+          <a href="#">Lost your Password?</a>
+          <br />
+          <a href="#">Don't have An account?</a>
+        </form>
+      </div>
     </div>
   );
 }
