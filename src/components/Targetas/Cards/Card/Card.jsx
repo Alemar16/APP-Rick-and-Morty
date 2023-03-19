@@ -34,18 +34,22 @@ Si el estado isFav es false, entonces settea ese estado en true, y despacha la f
   }, [myFavorites]);
   
   return (
-  
-    
     <div className={styles.card}>
       {isFav ? (
-      <button onClick={handleFavorite}>❤️</button>
-  ) : (
-      <button onClick={handleFavorite}>🤍</button>
+        <button className={styles.favButton} onClick={handleFavorite}>
+          ❤️
+        </button>
+      ) : (
+        <button className={styles.favButton} onClick={handleFavorite}>
+          🤍
+        </button>
       )}
 
-     {/*  El condicional "!props.isFavorite && ..." se usa para quitar el boton X de la card cuando este "true" en el componente Favorites */}
+      {/*  El condicional "!props.isFavorite && ..." se usa para quitar el boton X de la card cuando este "true" en el componente Favorites */}
       {!props.isFavorite && (
-        <button className={styles.cardButton} onClick={props.onCloseCard}>X</button>
+        <button className={styles.cardButton} onClick={props.onCloseCard}>
+          X
+        </button>
       )}
       <h3>{props.id}</h3>
       <div className={styles.name}>
@@ -57,9 +61,10 @@ Si el estado isFav es false, entonces settea ese estado en true, y despacha la f
       </div>
 
       {/* al hacer click en la imagen y el nombre de la card te renderiza a detail */}
-      <Link to={`/detail/${id}`}><img src={props.image} alt={props.name} /></Link> 
-      </div>
-    
+      <Link to={`/detail/${id}`}>
+        <img src={props.image} alt={props.name} />
+      </Link>
+    </div>
   );
 }
 
