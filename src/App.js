@@ -12,6 +12,7 @@ import Sinopsis from "./components/Sinopsis/Sinopsis";
 import Form from "./components/Form/Form";
 import Error404 from "./components/Error404/Error404";
 import { Navigate } from "react-router-dom";
+import Favorites from "./components/Favorites/Favorites";
 
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
   }
 
   const login = (userData) => {
-    // {userName : "alemar.martinez16@gmail.com", password: "Ale123"}
+    // {userName : "alemar.martinez16@gmail.com", password: "123"}
     if (userData.userName === userName && userData.password === password) {
       setAccess(true);
       navigate("/home");
@@ -86,6 +87,7 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/detail/:detailId" element={<Detail />} />
 
         <Route path="/404" element={<Error404 />} />

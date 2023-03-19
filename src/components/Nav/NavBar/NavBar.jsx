@@ -17,9 +17,9 @@ const NavLinkMe = ({ to, children, ...props }) => {
 export default function Navbar() {
   return (
     <div className={styles.navbar}>
-
       <NavLinkMe to="/home">Inicio</NavLinkMe>
       <NavLinkMe to="/sinopsis">Sinopsis</NavLinkMe>
+      <NavLinkMe to="/favorites">Favoritos</NavLinkMe>
       <NavLinkMe to="/about">Acerca de Mi</NavLinkMe>
     </div>
   );
