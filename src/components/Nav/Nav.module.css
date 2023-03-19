@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 5px 10px 0px 10px;
-  border-radius: 10px;
+  margin: 0px;
+ 
  
 }
 
@@ -38,3 +38,4 @@
   background: linear-gradient(to right, #0a0a0a 0%, #33333300 100%);
    box-shadow: 0 0 10px rgba(234, 241, 241, 0.6);
 }
+
