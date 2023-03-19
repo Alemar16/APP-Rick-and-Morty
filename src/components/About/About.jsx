@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./About.module.css";
-
+import {Link}from "react-router-dom"
 const About = () => {
   return (
     <div className={styles.container}>
@@ -22,7 +22,7 @@ const About = () => {
       <section>
         <h2>Redes sociales</h2>
         <div className={styles.socialLinks}>
-          <a href="https://twitter.com/mi-cuenta-de-twitter" target="_blank">Twitter</a>
+          <Link to="https://twitter.com/mi-cuenta-de-twitter" target="_blank">Twitter</Link>
           <a href="https://www.linkedin.com/in/armando-martínez-zambrano-51a714247" target="_blank">LinkedIn</a>
           <a href="https://github.com/Alemar16/APP-Rick-and-Morty.git" target="_blank">GitHub</a>
         </div>
