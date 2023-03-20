@@ -1,6 +1,3 @@
-
-
-
 import styles from "./Form.module.css";
 import { useEffect, useState } from "react";
 import { validate } from "./validation";
@@ -43,7 +40,7 @@ export default function Form(props) {
           className={styles.avatar}
           alt="Avatar Image"
         />
-        <h1>Inicia Seccion</h1>
+        {/* <h1 classmna={styles.inicia_seccion}>Inicia Seccion</h1> */}
         <form className={styles.formContainer} onSubmit={handleSubmit}>
           <label htmlFor="userName">Usuario</label>
           <input
@@ -69,7 +66,7 @@ export default function Form(props) {
           {errors.password ? (
             <p style={{ color: "red" }}>{errors.password}</p>
           ) : null}
-          <input type="submit" value="Log In" />
+          <input type="submit" value="Iniciar Sección" />
           <a href="#">Lost your Password?</a>
           <br />
           <a href="#">Don't have An account?</a>
@@ -78,3 +75,7 @@ export default function Form(props) {
     </div>
   );
 }
+
+
+
+
