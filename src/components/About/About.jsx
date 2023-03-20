@@ -4,9 +4,9 @@ import {Link}from "react-router-dom"
 const About = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.h1}>
+      <h2 className={styles.h1}>
         Bienvenidos a mi primer Single Page Application
-      </h1>
+      </h2>
       <p className={styles.p}>
         En esta App utilice los conocimientos adquiridos en SoyHenry durante el
         Modulo 2 con React Framework
