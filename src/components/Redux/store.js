@@ -6,7 +6,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose /
 
 const store = createStore(
   rootReducer, 
-  composeEnhancer(applyMiddleware(thunkMiddleware))  // esta linea es para poder hacer peticiones a un server
+  composeEnhancer(applyMiddleware(thunkMiddleware))  // esta linea es para poder hacer peticiones asincronas a react Redux (a un server)
 )
 
 export default store;

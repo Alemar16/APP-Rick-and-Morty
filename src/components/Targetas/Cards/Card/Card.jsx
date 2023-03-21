@@ -24,10 +24,11 @@ Si el estado isFav es false, entonces settea ese estado en true, y despacha la f
     }
   }
 
-  //---El useEffect comprueba que la card esté dentro de favoritos-------
+  //---El useEffect comprueba que la card esté dentro de favoritos------- 
+  //---El useEfect actualiza la lista de favorito------------------------
   useEffect(() => {
     myFavorites.forEach((fav) => {
-      if (fav.id === props.id) {
+      if (fav.id === props.id) { //esta es la lista de favoritos
         setIsFav(true);
       }
     });
